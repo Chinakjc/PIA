@@ -47,4 +47,6 @@ public class Brave extends BonhommeAllumette{
             return false;
         }
     }
+
+
 }
