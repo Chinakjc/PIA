@@ -1,15 +1,20 @@
 package Personnage;
 import Skill.Skills;
 import Weapons.Weapons;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
-import javax.swing.*;
+
 
 public abstract class BonhommeAllumette extends Actor {
     protected double size;
     protected int sizeUnite;
     protected int position_x;
     protected int position_y;
+
+    protected Texture texture;
+    protected Texture bg;
 
     protected Attributes attributes;
     protected Skills skills;
@@ -23,6 +28,7 @@ public abstract class BonhommeAllumette extends Actor {
 
 
     public BonhommeAllumette(String name,double size, int sizeUnite, int position_x, int position_y,Weapons weapon){
+        super();
         setSize(size);
         setSizeUnite(sizeUnite);
         setPosition_x(position_x);
@@ -39,6 +45,9 @@ public abstract class BonhommeAllumette extends Actor {
         setCriteRate(0.5);
         setCriteDMG(1.0);
         setMP(0);
+
+        texture = new Texture("head.png");
+        bg = new Texture("bg.jpg");
 
     }
 
@@ -183,8 +192,22 @@ public abstract class BonhommeAllumette extends Actor {
     }
 
 
+    @Override
+    public void draw(Batch batch,float parentAlpha){
+        super.draw(batch,parentAlpha);
+        if(!isVisible())
+            return;
 
+        batch.setColor(1,1,1,1);
+        /*batch.draw(bg
+                ,192,192
+                ,1920,1080);*/
+        batch.draw(texture,position_x,position_y,(int)(sizeUnite*size),(int)(sizeUnite*size));
 
+    }
+
+    @Override
+    public void act(float delta){ super.act(delta);}
 
 
 

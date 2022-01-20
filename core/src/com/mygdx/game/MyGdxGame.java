@@ -1,15 +1,37 @@
 package com.mygdx.game;
 
+import Menu.Menu;
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
-public class MyGdxGame extends ApplicationAdapter {
-	SpriteBatch batch;
-	Texture img;
-	
+public class MyGdxGame extends Game {
+	public static int width_current;
+	public static int height_current;
+
 	@Override
+	public void create() {
+		setScreen(new Menu(this));
+	}
+
+	@Override
+	public void render(){
+		super.render();
+	}
+
+	@Override
+	public void resize(int width,int height){
+	}
+
+}
+
+	/*
+	SpriteBatch batch;
+	Texture img;*/
+	
+	/*@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
@@ -29,3 +51,4 @@ public class MyGdxGame extends ApplicationAdapter {
 		img.dispose();
 	}
 }
+*/
