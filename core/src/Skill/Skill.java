@@ -1,15 +1,15 @@
 package Skill;
 
 public abstract class Skill {
-    protected double cd;
-    protected double DMG;
-    protected boolean isAvailable;
-    protected double timer;
+    protected double cd;//冷却时间
+    protected double DMG;//伤害倍率
+    protected boolean isAvailable;//技能是否可用
+    protected double timer;//冷却计时器
 
-    protected int MaxCharge;
-    protected int charge;
+    protected int MaxCharge;//最大连续可用次数
+    protected int charge;//计数器
 
-    protected boolean isAoE;
+    protected boolean isAoE;//是否是范围攻击
 
     public Skill(double cd, double DMG, boolean isAvailable, boolean isAoE, int charge) {
         setCd(cd);

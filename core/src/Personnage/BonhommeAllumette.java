@@ -33,7 +33,9 @@ public abstract class BonhommeAllumette extends Actor {
         setWeapons(weapon);
         setHP(getAttributes().getMaxHP());
         setDEF(getAttributes().getDEF());
-        setATK(getAttributes().getATK()+(int)Math.log10(1+attributes.getLevel()));
+        setATK(getAttributes().getATK()
+                +(int)Math.log10(1+attributes.getLevel())
+                +weapon.getBaseATK());
         setCriteRate(0.5);
         setCriteDMG(1.0);
         setMP(0);

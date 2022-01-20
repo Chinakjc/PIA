@@ -5,6 +5,6 @@ public class Claymore extends Weapons{
         super(name);
         setType("Claymore");
         setBaseATK(920);
-        setAttackSpeed(1.5);
+        setAttackSpeed(0.9);
     }
 }
