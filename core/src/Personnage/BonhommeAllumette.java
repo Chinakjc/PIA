@@ -3,11 +3,12 @@ import Skill.Skills;
 import Weapons.Weapons;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Group;
 
 
-
-public abstract class BonhommeAllumette extends Actor {
+public abstract class BonhommeAllumette extends Group{
     protected double size;
     protected int sizeUnite;
     protected int position_x;
@@ -48,8 +49,14 @@ public abstract class BonhommeAllumette extends Actor {
 
         texture = new Texture("head.png");
         bg = new Texture("bg.jpg");
+        setPosition(500,500);
+        setSize(1080,1080);
+
+
 
     }
+
+
 
     public double getSize() {
         return size;
@@ -202,7 +209,9 @@ public abstract class BonhommeAllumette extends Actor {
         /*batch.draw(bg
                 ,192,192
                 ,1920,1080);*/
-        batch.draw(texture,position_x,position_y,(int)(sizeUnite*size),(int)(sizeUnite*size));
+        setRotation(0.0f);
+
+        batch.draw(new TextureRegion(bg),getX(),getY(),getOriginX(),getOriginY(),getWidth(),getHeight(),getScaleX(),getScaleY(),getRotation());
 
     }
 
